@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
 
         transform.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
+        transform.Translate(Vector3.right * Time.deltaTime * h * moveSpeed);
     }
     // 함수(Function) , 메소드(Method)
 
