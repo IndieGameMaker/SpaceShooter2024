@@ -776,6 +776,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 8
   turnSpeed: 200
+  animator: {fileID: 952920566}
+--- !u!95 &952920566 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: f3cd25b3bf53c4adaaf087d862e435e6, type: 3}
+  m_PrefabInstance: {fileID: 952920555}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487099389
 PrefabInstance:
   m_ObjectHideFlags: 0
