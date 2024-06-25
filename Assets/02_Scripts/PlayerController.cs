@@ -7,8 +7,12 @@ public class PlayerController : MonoBehaviour
     // 2. InputSystem  (New)
 
     // Up/Down Arrow 키값을 저장하기 위한 변수를 선언
-    public float v; // 상하 화살표 키값 저장할 변수
-    public float h; // 좌우 화살표 키값 저장할 변수
+    // 접근제한자 (public, private)
+    private float v; // 상하 화살표 키값 저장할 변수
+    private float h; // 좌우 화살표 키값 저장할 변수
+
+    // 이동 속도 변수
+    public float moveSpeed = 0.01f;
 
     void Start()
     {
@@ -20,10 +24,7 @@ public class PlayerController : MonoBehaviour
         v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal");
 
-        // transform.position += new Vector3(0, 0, 0.01f);
-        // transform.position += Vector3.forward * 0.01f;
-
-        transform.Translate(Vector3.forward * 0.01f);
+        transform.Translate(Vector3.forward * moveSpeed);
     }
     // 함수(Function) , 메소드(Method)
 
