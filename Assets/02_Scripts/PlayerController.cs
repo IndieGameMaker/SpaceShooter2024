@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
 
     // 이동 속도 변수
     [SerializeField] // 직렬화
-    private float moveSpeed = 6.0f;
+    private float moveSpeed = 6.0f;  // 이동속도
     [SerializeField]
-    private float turnSpeed = 200.0f;
+    private float turnSpeed = 200.0f; // 회전속도
 
     void Start()
     {
@@ -29,8 +29,12 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
         r = Input.GetAxis("Mouse X");
 
+        // 이동처리
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
         transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
+        // 회전처리
+        transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
+
 
         // 벡터의 크기를 1로 변경하는 것
         // 벡터의 정규화 , Vector Normalized
