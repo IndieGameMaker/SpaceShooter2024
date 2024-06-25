@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float turnSpeed = 200.0f; // 회전속도
 
+    [SerializeField]
+    private Animator animator;
+
     void Start()
     {
         Debug.Log("Hello World");
