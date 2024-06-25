@@ -21,10 +21,11 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
 
         // transform.position += new Vector3(0, 0, 0.01f);
-        transform.position += Vector3.forward * 0.01f;
+        // transform.position += Vector3.forward * 0.01f;
 
-        //transform.position = transform.position + new Vector3(0, 0, 0.01f);
+        transform.Translate(Vector3.forward * 0.01f);
     }
+    // 함수(Function) , 메소드(Method)
 
     /*
         Vector3 ShortHand
