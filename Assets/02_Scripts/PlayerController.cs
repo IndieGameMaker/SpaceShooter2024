@@ -20,15 +20,23 @@ public class PlayerController : MonoBehaviour
         v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal");
 
-        // Debug.Log("v=" + v);
-        // Debug.Log("h=" + h);
-        //Debug.Log($"h={h} / v={v}");
-
-        bool isSpaceKeyDown = Input.GetKeyDown(KeyCode.Space);
-        if (isSpaceKeyDown == true)
-        {
-            Debug.Log(isSpaceKeyDown);
-        }
+        transform.position += new Vector3(0, 0, 0.01f);
+        //transform.position = transform.position + new Vector3(0, 0, 0.01f);
     }
 
 }
+
+/*
+    int
+    float
+    bool
+    string
+
+    if , if else
+    for, foreach, while
+    switch
+
+    array 배열
+    List 배열
+
+*/
