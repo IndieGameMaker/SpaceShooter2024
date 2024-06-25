@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private float h; // 좌우 화살표 키값 저장할 변수
 
     // 이동 속도 변수
-    public float moveSpeed = 0.01f;
+    [SerializeField] // 직렬화
+    private float moveSpeed = 6.0f;
 
     void Start()
     {
@@ -24,7 +25,7 @@ public class PlayerController : MonoBehaviour
         v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
         h = Input.GetAxis("Horizontal");
 
-        transform.Translate(Vector3.forward * moveSpeed);
+        transform.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
     }
     // 함수(Function) , 메소드(Method)
 
