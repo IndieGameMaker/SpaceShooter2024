@@ -17,8 +17,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        v = Input.GetAxis("Vertical");
-        Debug.Log(v);
+        v = Input.GetAxis("Vertical"); // -1.0f ~ 0.0f ~ +1.0f
+        h = Input.GetAxis("Horizontal");
+
+        // Debug.Log("v=" + v);
+        // Debug.Log("h=" + h);
+
+
+        Debug.Log($"h={h} / v={v}");
     }
 
 }
