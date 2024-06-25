@@ -22,9 +22,10 @@ public class PlayerController : MonoBehaviour
 
         // Debug.Log("v=" + v);
         // Debug.Log("h=" + h);
+        //Debug.Log($"h={h} / v={v}");
 
-
-        Debug.Log($"h={h} / v={v}");
+        bool isSpaceKeyDown = Input.GetKeyDown(KeyCode.Space);
+        Debug.Log(isSpaceKeyDown);
     }
 
 }
