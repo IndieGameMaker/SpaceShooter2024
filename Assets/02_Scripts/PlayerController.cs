@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
         //Debug.Log($"h={h} / v={v}");
 
         bool isSpaceKeyDown = Input.GetKeyDown(KeyCode.Space);
-        Debug.Log(isSpaceKeyDown);
+        if (isSpaceKeyDown == true)
+        {
+            Debug.Log(isSpaceKeyDown);
+        }
     }
 
 }
