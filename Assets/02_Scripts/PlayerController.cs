@@ -38,6 +38,9 @@ public class PlayerController : MonoBehaviour
         // 회전처리
         transform.Rotate(Vector3.up * Time.deltaTime * r * turnSpeed);
 
+        // 애니메애션 처리
+        animator.SetFloat("forward", v);
+        animator.SetFloat("strafe", h);
 
         // 벡터의 크기를 1로 변경하는 것
         // 벡터의 정규화 , Vector Normalized
