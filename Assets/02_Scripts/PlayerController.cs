@@ -26,7 +26,11 @@ public class PlayerController : MonoBehaviour
         h = Input.GetAxis("Horizontal");
 
         Vector3 moveDir = (Vector3.forward * v) + (Vector3.right * h);
-        transform.Translate(moveDir * Time.deltaTime * moveSpeed);
+        transform.Translate(moveDir.normalized * Time.deltaTime * moveSpeed);
+
+        // 벡터의 크기를 1로 변경하는 것
+        // 벡터의 정규화 , Vector Normalized
+
 
         // transform.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
         // transform.Translate(Vector3.right * Time.deltaTime * h * moveSpeed);
