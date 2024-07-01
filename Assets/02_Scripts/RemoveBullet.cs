@@ -5,7 +5,11 @@ public class RemoveBullet : MonoBehaviour
     //충돌 콜백함수
     void OnCollisionEnter(Collision coll)
     {
-        Debug.Log(coll.gameObject.name);
+        if (coll.collider.tag == "BULLET")
+        {
+            // BULLET 삭제
+            Destroy(coll.gameObject);
+        }
     }
 }
 /*
