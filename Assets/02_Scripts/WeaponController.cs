@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {
+    // 변수명 파스칼케이스 사용 : 소문자로 시작
     public GameObject bulletPrefab;
     public Transform firePos;
 
