@@ -20,6 +20,9 @@ public class WeaponController : MonoBehaviour
         {
             // 동적으로 Bullet 생성
             Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
+            // 총소리 발생
+            audio.PlayOneShot(fireSfx, 0.8f);
         }
     }
 }
