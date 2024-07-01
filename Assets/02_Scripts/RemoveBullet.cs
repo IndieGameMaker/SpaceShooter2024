@@ -5,7 +5,9 @@ public class RemoveBullet : MonoBehaviour
     //충돌 콜백함수
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.tag == "BULLET")
+        //if (coll.collider.tag == "BULLET") // Garbage Collection 발생
+
+        if (coll.collider.CompareTag("BULLET"))
         {
             // BULLET 삭제
             Destroy(coll.gameObject);
@@ -29,4 +31,15 @@ public class RemoveBullet : MonoBehaviour
 
         1. 양쪽 다 Collider 컴포넌트가 있어야 함.
         2. 이동하는 게임오브젝트에는 Rigidbody 반드시 있어야 함.
+*/
+
+/*
+        # AudioListener 
+            1. 소리를 듣는 역할 , 귀
+            2. 씬에 유일하게 하나만 존재
+
+        # AudioSource
+            1. 소리를 발생시키는 역할, 스피커
+            2. 여러개 존재가능
+
 */
