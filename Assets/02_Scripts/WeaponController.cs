@@ -6,6 +6,14 @@ public class WeaponController : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePos;
 
+    private new AudioSource audio;
+    [SerializeField] private AudioClip fireSfx;
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
