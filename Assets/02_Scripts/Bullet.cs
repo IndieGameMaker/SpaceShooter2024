@@ -7,10 +7,6 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-    }
-
-    void Update()
-    {
-
+        rb.AddRelativeForce(Vector3.forward * 1500.0f);
     }
 }
