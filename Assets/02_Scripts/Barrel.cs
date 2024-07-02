@@ -52,7 +52,9 @@ public class Barrel : MonoBehaviour
                             3.0f,               // 폭발 반경
                             1800.0f);           // 종 폭발력
 
-        Instantiate(expEffect, transform.position, Quaternion.identity);
+        var obj = Instantiate(expEffect, transform.position, Quaternion.identity);
+        Destroy(obj, 3.0f);
+
         Destroy(this.gameObject, 2.0f);
         // 폭발음 발생
         audio.PlayOneShot(expSfx, 0.9f);
