@@ -3,6 +3,7 @@ using Random = UnityEngine.Random;
 
 public class Barrel : MonoBehaviour
 {
+    [SerializeField] private GameObject expEffect;
     private int hitCount;
 
     void OnCollisionEnter(Collision coll)
