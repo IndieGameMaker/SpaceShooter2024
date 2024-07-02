@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class RemoveBullet : MonoBehaviour
 {
+    [SerializeField] private GameObject sparkEffect;
+
     //충돌 콜백함수
     void OnCollisionEnter(Collision coll)
     {
@@ -9,6 +11,9 @@ public class RemoveBullet : MonoBehaviour
 
         if (coll.collider.CompareTag("BULLET"))
         {
+            // 스파크이펙트 발생            
+
+
             // BULLET 삭제
             Destroy(coll.gameObject);
         }
