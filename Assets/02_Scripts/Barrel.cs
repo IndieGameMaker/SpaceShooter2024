@@ -31,5 +31,6 @@ public class Barrel : MonoBehaviour
                             1800.0f);           // 종 폭발력
 
         Instantiate(expEffect, transform.position, Quaternion.identity);
+        Destroy(this.gameObject, 2.0f);
     }
 }
