@@ -7,11 +7,14 @@ public class WeaponController : MonoBehaviour
     public Transform firePos;
 
     private new AudioSource audio;
+    private MeshRenderer muzzleFlash;
+
     [SerializeField] private AudioClip fireSfx;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
     }
 
     void Update()
