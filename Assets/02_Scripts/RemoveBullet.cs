@@ -22,7 +22,8 @@ public class RemoveBullet : MonoBehaviour
             // 법선벡터를 쿼터니언 타입으로 변환
             Quaternion rot = Quaternion.LookRotation(_normal);
             // 스파크 생성
-            Instantiate(sparkEffect, _point, rot);
+            GameObject obj = Instantiate(sparkEffect, _point, rot);
+            Destroy(obj, 0.5f);
 
             // BULLET 삭제
             Destroy(coll.gameObject);
