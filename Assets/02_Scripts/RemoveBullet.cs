@@ -12,7 +12,17 @@ public class RemoveBullet : MonoBehaviour
         if (coll.collider.CompareTag("BULLET"))
         {
             // 스파크이펙트 발생            
+            // 충돌 정보
+            ContactPoint cp = coll.GetContact(0);
 
+            // 충돌 위치
+            Vector3 _point = cp.point;
+            // 충돌지점의 법선 벡터
+            Vector3 _normal = -cp.normal;
+            // 법선벡터를 쿼터니언 타입으로 변환
+            Quaternion rot = Quaternion.LookRotation(_normal);
+            // 스파크 생성
+            Instantiate(sparkEffect, _point, rot);
 
             // BULLET 삭제
             Destroy(coll.gameObject);
