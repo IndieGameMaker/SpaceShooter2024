@@ -3,8 +3,15 @@ using Random = UnityEngine.Random;
 
 public class Barrel : MonoBehaviour
 {
-    [SerializeField] private GameObject expEffect;
     private int hitCount;
+    [SerializeField] private GameObject expEffect;
+    [SerializeField] private Texture[] textures;
+    private new MeshRenderer renderer;
+
+    void Start()
+    {
+        renderer = GetComponentInChildren<MeshRenderer>();
+    }
 
     void OnCollisionEnter(Collision coll)
     {
