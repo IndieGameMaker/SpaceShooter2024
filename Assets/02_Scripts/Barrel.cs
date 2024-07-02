@@ -11,6 +11,17 @@ public class Barrel : MonoBehaviour
     void Start()
     {
         renderer = GetComponentInChildren<MeshRenderer>();
+
+        // 난수 발생
+        /*
+            Random.Range(min, max)
+            - 정수 Random.Range(0, 10) => 0, 1, 2, ..., 9
+            - 실수 Random.Range(0.0f, 10.0f) => 0.0f ~ 10.0f
+        */
+
+        int index = Random.Range(0, textures.Length); // 0, 1, 2
+        // 텍스처 교체
+        renderer.material.mainTexture = textures[index];
     }
 
     void OnCollisionEnter(Collision coll)
