@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -15,6 +16,7 @@ public class WeaponController : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
+        muzzleFlash.enabled = false;
     }
 
     void Update()
@@ -26,6 +28,19 @@ public class WeaponController : MonoBehaviour
 
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
+
+            // Muzzle Flash
+            StartCoroutine(ShowMuzzleFlash());
         }
+    }
+
+    // 코루틴 (Coroutine)
+    IEnumerator ShowMuzzleFlash()
+    {
+        muzzleFlash.enabled = true;
+
+        yield return new WaitForSeconds(0.2f);
+
+        muzzleFlash.enabled = false;
     }
 }
