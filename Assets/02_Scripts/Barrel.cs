@@ -29,5 +29,7 @@ public class Barrel : MonoBehaviour
                             transform.position + impactPoint * 2.0f, // 폭발 원점
                             3.0f,               // 폭발 반경
                             1800.0f);           // 종 폭발력
+
+        Instantiate(expEffect, transform.position, Quaternion.identity);
     }
 }
