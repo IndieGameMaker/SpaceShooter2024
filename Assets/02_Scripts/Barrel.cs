@@ -4,13 +4,17 @@ using Random = UnityEngine.Random;
 public class Barrel : MonoBehaviour
 {
     private int hitCount;
+    private new MeshRenderer renderer;
+    private new AudioSource audio;
+
     [SerializeField] private GameObject expEffect;
     [SerializeField] private Texture[] textures;
-    private new MeshRenderer renderer;
+    [SerializeField] private AudioClip expSfx;
 
     void Start()
     {
         renderer = GetComponentInChildren<MeshRenderer>();
+        audio = GetComponent<AudioSource>();
 
         // 난수 발생
         /*
@@ -50,5 +54,7 @@ public class Barrel : MonoBehaviour
 
         Instantiate(expEffect, transform.position, Quaternion.identity);
         Destroy(this.gameObject, 2.0f);
+        // 폭발음 발생
+        audio.PlayOneShot(expSfx, 0.9f);
     }
 }
