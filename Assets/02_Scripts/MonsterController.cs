@@ -20,7 +20,8 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-
+        monsterTr = GetComponent<Transform>(); // monsterTr = transform;
+        playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
     }
 
     // Update is called once per frame
