@@ -19,6 +19,8 @@ public class MonsterController : MonoBehaviour
     // 몬스터의 Transform
     private Transform monsterTr;
 
+    private bool isDie = false;
+
     void Start()
     {
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
@@ -27,9 +29,24 @@ public class MonsterController : MonoBehaviour
 
     IEnumerator CheckMonsterState()
     {
-        while (조건 == 참)
+        while (isDie == false)
         {
-            // 로직을 무한 반복
+            // 두 위치간의 거리를 측정
+            float distance = Vector3.Distance(monsterTr.position, playerTr.position);
+            state = State.IDLE;
+
+            // 추적 사정거리 이내일 경우
+            if (distance <= traceDist)
+            {
+                state = State.TRACE;
+            }
+
+            // 공격 사정거리 이내일 경우
+            if (distance <= attackDist)
+            {
+                state = State.ATTACK;
+            }
+
             yield return new WaitForSeconds(0.3f);
         }
     }
