@@ -15,6 +15,8 @@ public class MonsterController : MonoBehaviour
 
     // 주인공 캐릭터의 Transform 컴포넌트를 저장할 변수
     private Transform playerTr;
+    // 몬스터의 Transform
+    private Transform monsterTr;
 
     void Start()
     {
