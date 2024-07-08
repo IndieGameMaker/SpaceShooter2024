@@ -25,6 +25,8 @@ public class MonsterController : MonoBehaviour
     {
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
+
+        StartCoroutine(CheckMonsterState());
     }
 
     IEnumerator CheckMonsterState()
