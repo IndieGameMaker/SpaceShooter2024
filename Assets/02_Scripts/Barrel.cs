@@ -1,11 +1,13 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Unity.Cinemachine;
 
 public class Barrel : MonoBehaviour
 {
     private int hitCount;
     private new MeshRenderer renderer;
     private new AudioSource audio;
+    private CinemachineImpulseSource impulseSource;
 
     [SerializeField] private GameObject expEffect;
     [SerializeField] private Texture[] textures;
@@ -15,6 +17,7 @@ public class Barrel : MonoBehaviour
     {
         renderer = GetComponentInChildren<MeshRenderer>();
         audio = GetComponent<AudioSource>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
 
         // 난수 발생
         /*
