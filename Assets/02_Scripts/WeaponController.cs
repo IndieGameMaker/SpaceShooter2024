@@ -27,8 +27,7 @@ public class WeaponController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // 동적으로 Bullet 생성
-            Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+            Fire();
 
             // 총소리 발생
             audio.PlayOneShot(fireSfx, 0.8f);
@@ -36,6 +35,14 @@ public class WeaponController : MonoBehaviour
             // Muzzle Flash
             StartCoroutine(ShowMuzzleFlash());
         }
+    }
+
+    private void Fire()
+    {
+        // 동적으로 Bullet 생성
+        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        // 타격감 연출
+        impulseSource.GenerateImpulse();
     }
 
     // 코루틴 (Coroutine)
