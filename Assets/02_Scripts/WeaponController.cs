@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 
 public class WeaponController : MonoBehaviour
@@ -9,12 +10,15 @@ public class WeaponController : MonoBehaviour
 
     private new AudioSource audio;
     private MeshRenderer muzzleFlash;
+    private CinemachineImpulseSource impulseSource;
 
     [SerializeField] private AudioClip fireSfx;
 
     void Start()
     {
         audio = GetComponent<AudioSource>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
+
         muzzleFlash = firePos.GetComponentInChildren<MeshRenderer>();
         muzzleFlash.enabled = false;
     }
