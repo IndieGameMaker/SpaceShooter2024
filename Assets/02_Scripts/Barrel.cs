@@ -61,5 +61,7 @@ public class Barrel : MonoBehaviour
         Destroy(this.gameObject, 2.0f);
         // 폭발음 발생
         audio.PlayOneShot(expSfx, 0.9f);
+        // 진동 발생
+        impulseSource.GenerateImpulse(Random.Range(0.5f, 2.0f));
     }
 }
