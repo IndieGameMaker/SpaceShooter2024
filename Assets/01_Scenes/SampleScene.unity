@@ -200,6 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   state: 0
+  attackDist: 2
+  traceDist: 10
 --- !u!1001 &134106467
 PrefabInstance:
   m_ObjectHideFlags: 0

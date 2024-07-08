@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
@@ -24,9 +25,12 @@ public class MonsterController : MonoBehaviour
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator CheckMonsterState()
     {
-
+        while (조건 == 참)
+        {
+            // 로직을 무한 반복
+            yield return new WaitForSeconds(0.3f);
+        }
     }
 }
