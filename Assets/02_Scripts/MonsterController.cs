@@ -29,6 +29,28 @@ public class MonsterController : MonoBehaviour
         StartCoroutine(CheckMonsterState());
     }
 
+    IEnumerator MonsterAction()
+    {
+        while (!isDie)
+        {
+            // 몬스터의 상태값에 따라 분기처리
+            switch (state)
+            {
+                case State.IDLE:
+                    break;
+                case State.TRACE:
+                    // 추적로직
+                    break;
+                case State.ATTACK:
+                    break;
+                case State.DIE:
+                    break;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+        }
+    }
+
     IEnumerator CheckMonsterState()
     {
         while (isDie == false)
