@@ -119,4 +119,10 @@ public class MonsterController : MonoBehaviour
             }
         }
     }
+
+    public void YouWin()
+    {
+        // 공격 애니메이션 중지
+        // Dance
+    }
 }

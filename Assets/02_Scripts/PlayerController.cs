@@ -62,6 +62,10 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerDie()
     {
-        Debug.Log("주인공 사망");
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+        foreach (var monster in monsters)
+        {
+            monster.GetComponent<MonsterController>().YouWin();
+        }
     }
 }
