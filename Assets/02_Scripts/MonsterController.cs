@@ -124,5 +124,9 @@ public class MonsterController : MonoBehaviour
     {
         // 공격 애니메이션 중지
         // Dance
+        StopAllCoroutines();
+        agent.isStopped = true;
+
+        anim.SetTrigger("PlayerDie");
     }
 }
