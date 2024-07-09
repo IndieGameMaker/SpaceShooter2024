@@ -30,6 +30,7 @@ public class MonsterController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
+        StartCoroutine(MonsterAction());
     }
 
     IEnumerator MonsterAction()
