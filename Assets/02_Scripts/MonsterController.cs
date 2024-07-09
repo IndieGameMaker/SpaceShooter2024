@@ -101,6 +101,7 @@ public class MonsterController : MonoBehaviour
         {
             Destroy(coll.gameObject);
             // Hit Reaction...
+            anim.SetTrigger(hashHit);
         }
     }
 }
