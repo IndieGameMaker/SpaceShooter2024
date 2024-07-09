@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
     private float initHp = 100.0f;
     private float currHp = 100.0f;
 
+    // 이벤트 선언
+    // 델리게이트 (Delegate : 대리자)
+    public delegate void PlayerDie();
+    public static event PlayerDie OnPlayerDie;
+
     void Start()
     {
         Debug.Log("Hello World");
@@ -55,17 +60,18 @@ public class PlayerController : MonoBehaviour
             currHp -= 10.0f;
             if (currHp <= 0.0f)
             {
-                PlayerDie();
+                OnPlayerDie(); // 이벤트 호출 (발생 : Raise)
+                //PlayerDie();
             }
         }
     }
 
-    private void PlayerDie()
-    {
-        GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
-        foreach (var monster in monsters)
-        {
-            monster.GetComponent<MonsterController>().YouWin();
-        }
-    }
+    // private void PlayerDie()
+    // {
+    //     GameObject[] monsters = GameObject.FindGameObjectsWithTag("MONSTER");
+    //     foreach (var monster in monsters)
+    //     {
+    //         monster.GetComponent<MonsterController>().YouWin();
+    //     }
+    // }
 }
