@@ -27,6 +27,7 @@ public class MonsterController : MonoBehaviour
     // Animator View의 Parameter Hash값을 미리 추출
     private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
     private readonly int hashIsAttack = Animator.StringToHash("IsAttack");
+    private readonly int hashHit = Animator.StringToHash("Hit");
 
     void Start()
     {
