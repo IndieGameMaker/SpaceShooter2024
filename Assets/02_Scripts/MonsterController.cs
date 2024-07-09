@@ -65,7 +65,10 @@ public class MonsterController : MonoBehaviour
                 case State.ATTACK:
                     anim.SetBool(hashIsAttack, true);
                     break;
+
                 case State.DIE:
+                    anim.SetTrigger(hashDie);
+                    isDie = true;
                     break;
             }
 
@@ -77,6 +80,8 @@ public class MonsterController : MonoBehaviour
     {
         while (isDie == false)
         {
+            if (state == State.DIE) yield break;
+
             // 두 위치간의 거리를 측정
             float distance = Vector3.Distance(monsterTr.position, playerTr.position);
             state = State.IDLE;
@@ -104,6 +109,12 @@ public class MonsterController : MonoBehaviour
             Destroy(coll.gameObject);
             // Hit Reaction...
             anim.SetTrigger(hashHit);
+
+            hp -= 20;
+            if (hp <= 0)
+            {
+                state = State.DIE;
+            }
         }
     }
 }
