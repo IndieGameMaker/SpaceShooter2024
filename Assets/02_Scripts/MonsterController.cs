@@ -31,6 +31,18 @@ public class MonsterController : MonoBehaviour
     private readonly int hashHit = Animator.StringToHash("Hit");
     private readonly int hashDie = Animator.StringToHash("Die");
 
+    void OnEnable()
+    {
+        // 이벤트 리스너 등록(Event Subscription)
+        PlayerController.OnPlayerDie += YouWin;
+    }
+
+    void OnDisable()
+    {
+        // 이벤트 리스너 해제
+        PlayerController.OnPlayerDie -= YouWin;
+    }
+
     void Start()
     {
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
