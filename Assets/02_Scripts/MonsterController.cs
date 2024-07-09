@@ -24,6 +24,9 @@ public class MonsterController : MonoBehaviour
 
     private bool isDie = false;
 
+    // Animator View의 Parameter Hash값을 미리 추출
+    private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
+    private readonly int hashIsAttack = Animator.StringToHash("IsAttack");
     void Start()
     {
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
@@ -44,14 +47,14 @@ public class MonsterController : MonoBehaviour
             {
                 case State.IDLE:
                     agent.isStopped = true;
-                    anim.SetBool("IsTrace", false);
+                    anim.SetBool(hashIsTrace, false);
                     break;
 
                 case State.TRACE:
                     // 추적로직
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
-                    anim.SetBool("IsTrace", true);
+                    anim.SetBool(hashIsTrace, true);
                     break;
 
                 case State.ATTACK:
