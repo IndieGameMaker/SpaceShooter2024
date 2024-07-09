@@ -93,4 +93,13 @@ public class MonsterController : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
         }
     }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if (coll.collider.CompareTag("BULLET"))
+        {
+            Destroy(coll.gameObject);
+            // Hit Reaction...
+        }
+    }
 }
