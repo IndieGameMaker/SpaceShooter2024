@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Animator animator;
 
+    private float initHp = 100.0f;
+    private float currHp = 100.0f;
+
     void Start()
     {
         Debug.Log("Hello World");
@@ -49,8 +52,16 @@ public class PlayerController : MonoBehaviour
     {
         if (coll.CompareTag("PUNCH"))
         {
-            Debug.Log(coll.gameObject.name);
+            currHp -= 10.0f;
+            if (currHp <= 0.0f)
+            {
+                PlayerDie();
+            }
         }
     }
 
+    private void PlayerDie()
+    {
+        Debug.Log("주인공 사망");
+    }
 }
