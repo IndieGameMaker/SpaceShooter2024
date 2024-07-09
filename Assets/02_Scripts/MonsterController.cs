@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterController : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class MonsterController : MonoBehaviour
     private Transform playerTr;
     // 몬스터의 Transform
     private Transform monsterTr;
+    private NavMeshAgent agent;
 
     private bool isDie = false;
 
@@ -25,6 +27,7 @@ public class MonsterController : MonoBehaviour
     {
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
+        agent = GetComponent<NavMeshAgent>();
 
         StartCoroutine(CheckMonsterState());
     }
