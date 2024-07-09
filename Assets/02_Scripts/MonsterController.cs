@@ -23,6 +23,7 @@ public class MonsterController : MonoBehaviour
     private Animator anim;
 
     private bool isDie = false;
+    private int hp = 100;
 
     // Animator View의 Parameter Hash값을 미리 추출
     private readonly int hashIsTrace = Animator.StringToHash("IsTrace");
