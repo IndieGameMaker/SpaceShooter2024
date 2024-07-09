@@ -20,6 +20,7 @@ public class MonsterController : MonoBehaviour
     // 몬스터의 Transform
     private Transform monsterTr;
     private NavMeshAgent agent;
+    private Animator anim;
 
     private bool isDie = false;
 
@@ -28,6 +29,7 @@ public class MonsterController : MonoBehaviour
         monsterTr = GetComponent<Transform>(); // monsterTr = transform;
         playerTr = GameObject.FindGameObjectWithTag("PLAYER")?.GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
+        anim = GetComponent<Animator>();
 
         StartCoroutine(CheckMonsterState());
         StartCoroutine(MonsterAction());
@@ -42,12 +44,14 @@ public class MonsterController : MonoBehaviour
             {
                 case State.IDLE:
                     agent.isStopped = true;
+                    anim.SetBool("IsTrace", false);
                     break;
 
                 case State.TRACE:
                     // 추적로직
                     agent.SetDestination(playerTr.position);
                     agent.isStopped = false;
+                    anim.SetBool("IsTrace", true);
                     break;
 
                 case State.ATTACK:
