@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -42,39 +43,14 @@ public class PlayerController : MonoBehaviour
         animator.SetFloat("forward", v);
         animator.SetFloat("strafe", h);
 
-        // 벡터의 크기를 1로 변경하는 것
-        // 벡터의 정규화 , Vector Normalized
-
-
-        // transform.Translate(Vector3.forward * Time.deltaTime * v * moveSpeed);
-        // transform.Translate(Vector3.right * Time.deltaTime * h * moveSpeed);
     }
-    // 함수(Function) , 메소드(Method)
 
-    /*
-        Vector3 ShortHand
-
-        Vector3.forward = Vector3(0, 0, 1)
-        Vector3.up      = Vector3(0, 1, 0)
-        Vector3.right   = Vector3(1, 0, 0)
-
-        Vector3.one     = Vector3(1, 1, 1)
-        Vector3.zero    = Vector3(0, 0, 0)    
-    */
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.CompareTag("PUNCH"))
+        {
+            Debug.Log(coll.gameObject.name);
+        }
+    }
 
 }
-
-/*
-    int
-    float
-    bool
-    string
-
-    if , if else
-    for, foreach, while
-    switch
-
-    array 배열
-    List 배열
-
-*/
