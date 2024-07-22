@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         GameObject.Find("SpawnPointGroup")?.GetComponentsInChildren<Transform>(points);
+
+        //Invoke("호출할 함수", 지연시간);
+        InvokeRepeating("CreateMonster", 2.0f, 3.0f);
     }
 
     void CreateMonster()
