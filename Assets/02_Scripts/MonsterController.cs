@@ -132,6 +132,19 @@ public class MonsterController : MonoBehaviour
         }
     }
 
+    public void OnDamage()
+    {
+        // Hit Reaction...
+        anim.SetTrigger(hashHit);
+
+        hp -= 20;
+        if (hp <= 0)
+        {
+            state = State.DIE;
+        }
+    }
+
+
     public void YouWin()
     {
         // 공격 애니메이션 중지

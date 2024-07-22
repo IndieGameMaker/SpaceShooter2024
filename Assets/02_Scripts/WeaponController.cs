@@ -47,7 +47,7 @@ public class WeaponController : MonoBehaviour
         // Raycasting ...
         if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f, 1 << 8))
         {
-            Debug.Log(hit.collider.name);
+            hit.collider.GetComponent<MonsterController>().OnDamage();
         }
 
         // 타격감 연출
