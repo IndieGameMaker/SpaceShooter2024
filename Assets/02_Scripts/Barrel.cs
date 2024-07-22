@@ -9,9 +9,7 @@ public class Barrel : MonoBehaviour, IDamagable
     private new AudioSource audio;
     private CinemachineImpulseSource impulseSource;
 
-    [SerializeField] private GameObject expEffect;
-    [SerializeField] private Texture[] textures;
-    [SerializeField] private AudioClip expSfx;
+    [SerializeField] private BarrelDataSO barrelDataSO;
 
     void Start()
     {
@@ -26,9 +24,9 @@ public class Barrel : MonoBehaviour, IDamagable
             - 실수 Random.Range(0.0f, 10.0f) => 0.0f ~ 10.0f
         */
 
-        int index = Random.Range(0, textures.Length); // 0, 1, 2
+        int index = Random.Range(0, barrelDataSO.textures.Length); // 0, 1, 2
         // 텍스처 교체
-        renderer.material.mainTexture = textures[index];
+        renderer.material.mainTexture = barrelDataSO.textures[index];
     }
 
     private void ExpBarrel()
@@ -44,12 +42,12 @@ public class Barrel : MonoBehaviour, IDamagable
                             3.0f,               // 폭발 반경
                             1800.0f);           // 종 폭발력
 
-        var obj = Instantiate(expEffect, transform.position, Quaternion.identity);
+        var obj = Instantiate(barrelDataSO.expEffect, transform.position, Quaternion.identity);
         Destroy(obj, 3.0f);
 
         Destroy(this.gameObject, 2.0f);
         // 폭발음 발생
-        audio.PlayOneShot(expSfx, 0.9f);
+        audio.PlayOneShot(barrelDataSO.expSfx, 0.9f);
         // 진동 발생
         impulseSource.GenerateImpulse(Random.Range(0.5f, 2.0f));
     }

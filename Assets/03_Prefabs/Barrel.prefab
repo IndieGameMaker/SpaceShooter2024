@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f93c9295b72042b8957e1da581ddf1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barrelDataSO: {fileID: 11400000, guid: 944f6feed220f410c8a3127e4e2be74b, type: 2}
   expEffect: {fileID: 1121192042590650, guid: e1b08032bec16ba4eb1ae23cbd572664, type: 3}
   textures:
   - {fileID: 2800000, guid: e1f2b37b381e6d14a8a01ddd49a84a58, type: 3}
