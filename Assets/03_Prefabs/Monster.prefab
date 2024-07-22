@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   attackDist: 2
-  traceDist: 10
+  traceDist: 30
 --- !u!195 &4372605419731087256
 NavMeshAgent:
   m_ObjectHideFlags: 0
