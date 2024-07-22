@@ -42,7 +42,14 @@ public class WeaponController : MonoBehaviour
     private void Fire()
     {
         // 동적으로 Bullet 생성
-        Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+        // Instantiate(bulletPrefab, firePos.position, firePos.rotation);
+
+        // Raycasting ...
+        if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f))
+        {
+            Debug.Log(hit.collider.name);
+        }
+
         // 타격감 연출
         impulseSource.GenerateImpulse();
     }
