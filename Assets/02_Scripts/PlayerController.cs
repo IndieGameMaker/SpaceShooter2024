@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
             if (currHp <= 0.0f)
             {
                 //GameObject.Find("Game Manager").GetComponent<GameManager>().IsGameOver = true;
+                GameManager.instance.IsGameOver = true;
                 OnPlayerDie(); // 이벤트 호출 (발생 : Raise)
                 //PlayerDie();
             }
