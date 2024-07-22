@@ -45,9 +45,9 @@ public class WeaponController : MonoBehaviour
         // Instantiate(bulletPrefab, firePos.position, firePos.rotation);
 
         // Raycasting ...
-        if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f, 1 << 8))
+        if (Physics.Raycast(firePos.position, firePos.forward, out RaycastHit hit, 10.0f, 1 << 8 | 1 << 9))
         {
-            hit.collider.GetComponent<MonsterController>().OnDamage();
+            hit.collider.GetComponent<IDamagable>()?.OnDamage();
         }
 
         // 타격감 연출

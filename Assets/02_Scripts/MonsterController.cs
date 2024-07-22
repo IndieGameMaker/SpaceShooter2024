@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MonsterController : MonoBehaviour
+public class MonsterController : MonoBehaviour, IDamagable
 {
     // 열거형 변수를 정의
     public enum State { IDLE, TRACE, ATTACK, DIE };

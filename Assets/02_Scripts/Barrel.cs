@@ -2,7 +2,7 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using Unity.Cinemachine;
 
-public class Barrel : MonoBehaviour
+public class Barrel : MonoBehaviour, IDamagable
 {
     private int hitCount;
     private new MeshRenderer renderer;
@@ -63,5 +63,13 @@ public class Barrel : MonoBehaviour
         audio.PlayOneShot(expSfx, 0.9f);
         // 진동 발생
         impulseSource.GenerateImpulse(Random.Range(0.5f, 2.0f));
+    }
+
+    public void OnDamage()
+    {
+        if (++hitCount == 3)
+        {
+            ExpBarrel();
+        }
     }
 }
