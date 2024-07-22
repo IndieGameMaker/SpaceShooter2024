@@ -31,17 +31,6 @@ public class Barrel : MonoBehaviour, IDamagable
         renderer.material.mainTexture = textures[index];
     }
 
-    void OnCollisionEnter(Collision coll)
-    {
-        if (coll.collider.CompareTag("BULLET"))
-        {
-            if (++hitCount == 3)
-            {
-                ExpBarrel();
-            }
-        }
-    }
-
     private void ExpBarrel()
     {
         var rb = this.gameObject.AddComponent<Rigidbody>();

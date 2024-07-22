@@ -121,14 +121,6 @@ public class MonsterController : MonoBehaviour, IDamagable
         if (coll.collider.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
-            // Hit Reaction...
-            anim.SetTrigger(hashHit);
-
-            hp -= 20;
-            if (hp <= 0)
-            {
-                state = State.DIE;
-            }
         }
     }
 

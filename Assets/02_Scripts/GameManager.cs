@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private bool isGameOver;
 
     // 프로퍼티 : 외부에 공개되는 속성값
+    // getter/setter
     public bool IsGameOver
     {
         get
