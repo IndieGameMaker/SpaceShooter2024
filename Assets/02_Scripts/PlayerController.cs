@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,9 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private Animator animator;
+
+    [SerializeField]
+    private Image hpBar;
 
     private float initHp = 100.0f;
     private float currHp = 100.0f;
@@ -58,6 +62,9 @@ public class PlayerController : MonoBehaviour
         if (currHp > 0.0f && coll.CompareTag("PUNCH"))
         {
             currHp -= 10.0f;
+
+            hpBar.fillAmount = currHp / initHp;
+
             if (currHp <= 0.0f)
             {
                 //GameObject.Find("Game Manager").GetComponent<GameManager>().IsGameOver = true;
