@@ -1322,6 +1322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points: []
   monsterPrefab: {fileID: 1524893899833618931, guid: 0047707ad1d084740a909ca589c7267d, type: 3}
+  scoreText: {fileID: 870743307}
 --- !u!4 &1230292773
 Transform:
   m_ObjectHideFlags: 0

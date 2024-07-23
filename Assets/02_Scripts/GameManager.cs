@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour
         set
         {
             score += value;
-            scoreText.text = score.ToString("000000");
+            string temp = $"SCORE : <color=#0000ff>{score:000000}</color>";
+            scoreText.text = temp;
         }
     }
 
