@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -26,6 +27,8 @@ public class GameManager : MonoBehaviour
             CancelInvoke(nameof(CreateMonster));
         }
     }
+
+    [SerializeField] private TMP_Text scoreText;
 
     void Awake()
     {
