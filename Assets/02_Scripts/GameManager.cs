@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
         set
         {
             score += value;
-            string temp = $"SCORE : <color=#0000ff>{score:000000}</color>";
-            scoreText.text = temp;
+            // 점수를 기록
+            PlayerPrefs.SetInt("SCORE", score);
+            DisplayScore();
         }
     }
 
@@ -60,10 +61,9 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // // get
-        // bool aaa = GameManager.IsGameOver;
-        // // set
-        // GameManager.IsGameOver = true;
+        // 이전 점수 로드
+        score = PlayerPrefs.GetInt("SCORE", 0);
+        DisplayScore();
 
         GameObject.Find("SpawnPointGroup")?.GetComponentsInChildren<Transform>(points);
 
@@ -79,4 +79,9 @@ public class GameManager : MonoBehaviour
         Instantiate(monsterPrefab, points[index].position, Quaternion.identity);
     }
 
+    void DisplayScore()
+    {
+        string temp = $"SCORE : <color=#00ff00>{score:000000}</color>";
+        scoreText.text = temp;
+    }
 }
