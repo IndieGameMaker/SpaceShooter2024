@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,17 @@ public class GameManager : MonoBehaviour
     public GameObject monsterPrefab;
 
     private bool isGameOver;
+    private int score;
+
+    public int Score
+    {
+        get { return score; }
+        set
+        {
+            score += value;
+            scoreText.text = score.ToString("000000");
+        }
+    }
 
     // 프로퍼티 : 외부에 공개되는 속성값
     // getter/setter
@@ -65,4 +77,5 @@ public class GameManager : MonoBehaviour
         // 몬스터 생성
         Instantiate(monsterPrefab, points[index].position, Quaternion.identity);
     }
+
 }
